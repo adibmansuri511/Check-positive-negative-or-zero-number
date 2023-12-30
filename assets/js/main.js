@@ -1,20 +1,33 @@
-const randomNumber = () => {
+const checkNumber = () => {
 
-    // Get Minimum value from input
-    let minValue = Number(document.getElementById("minValue").value);
+    // Get number from input
+    let number = Number(document.getElementById("number").value);
 
-    // Get Maximum value from input
-    let maxValue = Number(document.getElementById("maxValue").value);
+    // Check if the number is positive, negative or zero 
 
-    // Random number generation equation
-    let randomNumber = (Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue);
+    let result = "";
 
-    randomNumber = `The random number between ${minValue} and ${maxValue} is : ${randomNumber}`;
+    if (number >= 0) {
+        if (number === 0) {
+            result = `The number is zero.`;
+            console.log(result);
+            document.querySelector("#h4").innerHTML = result;
 
-    console.log(randomNumber);
+        } else {
+            result = `The number ${number} is positive.`;
+            console.log(result);
+            document.querySelector("#h4").innerHTML = result;
 
-    document.querySelector("#h4").innerHTML = randomNumber;
+        }
+
+    } else {
+        result = `The number ${number} is negative.`;
+        console.log(result);
+        document.querySelector("#h4").innerHTML = result;
+
+    }
 
     return;
 }
 
+document.getElementById("number").addEventListener("input", checkNumber);
