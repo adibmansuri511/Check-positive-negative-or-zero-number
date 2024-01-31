@@ -1,2 +1,2 @@
-#  check-positive-negative-or-zero-number
- Practice Example
+# Check-positive-negative-or-zero-number
+JavaScript Practice Example.
